@@ -13,9 +13,9 @@ namespace records
 
 	}
 
-	records::Employee& Database::add_employee(const std::string& first_name, const std::string& last_name)
+	records::Employee& Database::add_employee(const std::string first_name, const std::string last_name)
 	{
-		m_employees.push_back(Employee{first_name, last_name, m_next_employee_number++,  default_starting_salary, true} );
+		m_employees.emplace_back(Employee{first_name, last_name, m_next_employee_number++,  default_starting_salary, true} );
 		return m_employees[m_employees.size() - 1];
 	}
 

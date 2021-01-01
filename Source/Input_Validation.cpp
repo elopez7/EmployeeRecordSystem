@@ -79,7 +79,7 @@ namespace records
 
 		if (it == inCommands.end())
 		{
-			return "Invalid command\n";
+			return {};//"Invalid command\n";
 		}
 		return it->first;
 	}

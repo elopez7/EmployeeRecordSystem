@@ -1,6 +1,7 @@
 ﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 #include <unordered_map>
+#include <iostream>
 #include "UserInterface.h"
 #include "Input_Validation.h"
 #include <functional>
@@ -25,6 +26,12 @@ int main()
 			{"help", records::help }
 		};
 		std::string user_input = records::command_validation(sampleCommands);
+		
+		if (user_input.empty())
+		{
+			std::cout << "Invalid Command\n";
+			continue;
+		}
 		sampleCommands[user_input](employee_db);
 	}
 	return 0;
